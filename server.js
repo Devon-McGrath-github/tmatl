@@ -16,7 +16,7 @@ app.engine('hbs', hbs({
 app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
 
-app.get('/', routes.index)
+app.get('/challenges', routes.challenges)
 
 app.listen(PORT, function () {
   console.log('listening on port: ', PORT);

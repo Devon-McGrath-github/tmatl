@@ -1,10 +1,10 @@
 var data = require('./db');
 
 module.exports = {
-  index: index
+  challenges: challenges
 }
 
-function index(req, res) {
+function challenges(req, res) {
   var model = {
     // layout: 'main',
     title: 'Home'
@@ -12,6 +12,6 @@ function index(req, res) {
   data.getChallenges().then(function (data) {
     model.challenges = data
     console.log(data);
-    res.render('index', model)
+    res.json(model)
   })
 }

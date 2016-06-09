@@ -50,23 +50,23 @@
 	
 	var _superagent2 = _interopRequireDefault(_superagent);
 	
-	var _image = __webpack_require__(7);
+	var _challengeList = __webpack_require__(7);
 	
-	var _image2 = _interopRequireDefault(_image);
+	var _challengeList2 = _interopRequireDefault(_challengeList);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var showImage = function showImage(err, res) {
-	  var placeholder = document.getElementsById('placeholder');
-	  placeholder.innerHTML = (0, _image2.default)(res.body);
+	var showList = function showList(err, res) {
+	  var placeholder = document.getElementById('placeholder');
+	  placeholder.innerHTML = (0, _challengeList2.default)(res.body);
 	};
 	
-	var getImage = function getImage() {
-	  var apod = 'https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY';
-	  _superagent2.default.get(apodEndpoint).end(showImage);
+	var getList = function getList() {
+	  var challengeApi = '/challenges';
+	  _superagent2.default.get(challengeApi).end(showList);
 	};
 	
-	document.addEventListener('DOMContentLoaded', getImage);
+	document.addEventListener('DOMContentLoaded', getList);
 
 /***/ },
 /* 1 */
@@ -1665,18 +1665,18 @@
 
 	var Handlebars = __webpack_require__(8);
 	function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-	module.exports = (Handlebars["default"] || Handlebars).template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-	    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
+	module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+	    var helper;
 	
-	  return "<div id=\"apod\">\n  <p><b>"
-	    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-	    + "</b></p>\n  <p>"
-	    + alias4(((helper = (helper = helpers.explanation || (depth0 != null ? depth0.explanation : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"explanation","hash":{},"data":data}) : helper)))
-	    + "</p>\n  <img src=\""
-	    + alias4(((helper = (helper = helpers.hdurl || (depth0 != null ? depth0.hdurl : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"hdurl","hash":{},"data":data}) : helper)))
-	    + "\" alt=\""
-	    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-	    + "\">\n</div>\n";
+	  return "        <li>"
+	    + container.escapeExpression(((helper = (helper = helpers.challenge || (depth0 != null ? depth0.challenge : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"challenge","hash":{},"data":data}) : helper)))
+	    + "</li>\n";
+	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+	    var stack1;
+	
+	  return "<div id=\"list\">\n"
+	    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.challenges : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+	    + "</div>\n";
 	},"useData":true});
 
 /***/ },

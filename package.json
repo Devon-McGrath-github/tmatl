@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "debug": "node-inspector & node-dev --debug server.js",
+    "debug": "npm run watch && node-inspector & node-dev --debug server.js",
     "init": "knex init",
     "migrate:make": "knex migrate:make",
     "migrate:latest": "knex migrate:latest",

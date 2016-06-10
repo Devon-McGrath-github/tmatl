@@ -10,7 +10,7 @@ var PORT = process.env.PORT || 3000
 app.use(bodyParser.urlencoded({
   urlencoded: true
 }))
-app.use(express.static('public'))
+app.use(express.static('build'))
 app.engine('hbs', hbs({
   extname: 'hbs'
 }))
@@ -18,8 +18,10 @@ app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
 
 app.get('/challenges', routes.challenges)
+app.get('/getCompleted', routes.getCompleted)
 app.post('/createChallenge', routes.createChallenge)
 app.post('/delete', routes.deleteChallenge)
+
 
 
 

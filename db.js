@@ -4,7 +4,8 @@ var config = require('./knexfile')
 module.exports = {
   getChallenges: getChallenges,
   addChallenge: addChallenge,
-  deleteChallenge: deleteChallenge
+  deleteChallenge: deleteChallenge,
+  getCompleteChallenges: getCompleteChallenges
 }
 
 function getConnection() {
@@ -34,6 +35,13 @@ function deleteChallenge(idObj) {
   return connection('challenges')
     .where('id', idObj.id)
     .del()
+}
+
+function getCompleteChallenges() {
+  var connection = getConnection()
+  var completedList = connection('completed').select()
+    // console.log(completedList);
+  return completedList
 }
 
 

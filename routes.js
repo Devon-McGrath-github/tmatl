@@ -3,7 +3,8 @@ var data = require('./db');
 module.exports = {
   challenges: challenges,
   createChallenge: createChallenge,
-  deleteChallenge: deleteChallenge
+  deleteChallenge: deleteChallenge,
+  getCompleted: getCompleted
 }
 
 function challenges(req, res) {
@@ -13,13 +14,13 @@ function challenges(req, res) {
   }
   data.getChallenges().then(function (data) {
     model.challenges = data
-    console.log(data);
+      // console.log(data);
     res.json(model)
   })
 }
 
 function createChallenge(req, res) {
-  console.log('creating challenge');
+  // console.log('creating challenge');
   data.addChallenge({
       challenge: req.body.create
     })
@@ -29,11 +30,23 @@ function createChallenge(req, res) {
 }
 
 function deleteChallenge(req, res) {
-  console.log('deleting challenge');
+  // console.log('deleting challenge');
   data.deleteChallenge({
       id: req.body.id
     })
     .then(function () {
       res.redirect('/')
     })
+}
+
+function getCompleted(req, res) {
+
+  var model = {
+
+  }
+  data.getCompleteChallenges().then(function (data) {
+    model.completed = data
+    console.log(data);
+    res.json(model)
+  })
 }

@@ -18,6 +18,9 @@ app.set('view engine', 'hbs')
 app.set('views', path.join(__dirname, 'views'))
 
 app.get('/challenges', routes.challenges)
+app.post('/createChallenge', routes.createChallenge)
+
+
 
 app.listen(PORT, function () {
   console.log('listening on port: ', PORT);

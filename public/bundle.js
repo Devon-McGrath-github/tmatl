@@ -1666,11 +1666,13 @@
 	var Handlebars = __webpack_require__(8);
 	function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 	module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
-	    var helper;
+	    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 	
-	  return "        <li>"
-	    + container.escapeExpression(((helper = (helper = helpers.challenge || (depth0 != null ? depth0.challenge : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"challenge","hash":{},"data":data}) : helper)))
-	    + "\n        <form action=\"index.html\" method=\"post\">\n            <button type=\"submit\" name=\"button\">Delete</button>\n        </form>\n        </li>\n";
+	  return "        <li>\n            "
+	    + alias4(((helper = (helper = helpers.challenge || (depth0 != null ? depth0.challenge : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"challenge","hash":{},"data":data}) : helper)))
+	    + "\n            <form action='/delete' method=\"post\">\n                <button class=\"delete\" type=\"text\" name=\"id\" value=\""
+	    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
+	    + "\">Delete</button>\n            </form>\n        </li>\n";
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 	

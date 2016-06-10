@@ -1670,7 +1670,7 @@
 	
 	  return "        <li>"
 	    + container.escapeExpression(((helper = (helper = helpers.challenge || (depth0 != null ? depth0.challenge : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"challenge","hash":{},"data":data}) : helper)))
-	    + "</li>\n";
+	    + "\n        <form action=\"index.html\" method=\"post\">\n            <button type=\"submit\" name=\"button\">Delete</button>\n        </form>\n        </li>\n";
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 	

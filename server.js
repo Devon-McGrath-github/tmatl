@@ -19,6 +19,7 @@ app.set('views', path.join(__dirname, 'views'))
 
 app.get('/challenges', routes.challenges)
 app.post('/createChallenge', routes.createChallenge)
+app.post('/delete', routes.deleteChallenge)
 
 
 

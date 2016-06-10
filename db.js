@@ -3,7 +3,8 @@ var config = require('./knexfile')
 
 module.exports = {
   getChallenges: getChallenges,
-  addChallenge: addChallenge
+  addChallenge: addChallenge,
+  deleteChallenge: deleteChallenge
 }
 
 function getConnection() {
@@ -24,6 +25,15 @@ function addChallenge(newTask) {
     })
     .into('challenges')
     .catch(displayError)
+}
+
+function deleteChallenge(idObj) {
+  // console.log(id, "at db function");
+  // console.log(id.id);
+  var connection = getConnection()
+  return connection('challenges')
+    .where('id', idObj.id)
+    .del()
 }
 
 

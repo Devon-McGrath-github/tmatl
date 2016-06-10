@@ -2,7 +2,8 @@ var data = require('./db');
 
 module.exports = {
   challenges: challenges,
-  createChallenge: createChallenge
+  createChallenge: createChallenge,
+  deleteChallenge: deleteChallenge
 }
 
 function challenges(req, res) {
@@ -21,6 +22,16 @@ function createChallenge(req, res) {
   console.log('creating challenge');
   data.addChallenge({
       challenge: req.body.create
+    })
+    .then(function () {
+      res.redirect('/')
+    })
+}
+
+function deleteChallenge(req, res) {
+  console.log('deleting challenge');
+  data.deleteChallenge({
+      id: req.body.id
     })
     .then(function () {
       res.redirect('/')

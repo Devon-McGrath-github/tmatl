@@ -5,10 +5,11 @@
 
 <div id="list">
     {{#each challenges}}
-        <li>{{challenge}}
-        <form action="index.html" method="post">
-            <button class="delete" type="submit" name="button">Delete</button>
-        </form>
+        <li>
+            {{challenge}}
+            <form action='/delete' method="post">
+                <button class="delete" type="text" name="id" value="{{id}}">Delete</button>
+            </form>
         </li>
     {{/each}}
 </div>

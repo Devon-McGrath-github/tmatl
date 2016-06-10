@@ -4,12 +4,17 @@
 </form>
 
 <div id="list">
+    <table>
     {{#each challenges}}
-        <li>
-            {{challenge}}
-            <form action='/delete' method="post">
-                <button class="delete" type="text" name="id" value="{{id}}">Delete</button>
-            </form>
-        </li>
+        <tr>
+            <td>
+                {{challenge}}
+            </td>
+            <td>
+                <form action='/delete' method="post">
+                    <button class="delete" type="text" name="id" value="{{id}}">Delete</button>
+                </form>
+            </td>
+        </tr>
     {{/each}}
-</div>
+    </table>

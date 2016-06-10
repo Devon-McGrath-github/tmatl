@@ -37,6 +37,7 @@ function deleteChallenge(idObj) {
 }
 
 
+
 // ERROR FUNCTION REFRENCED BY OTHER FUNCTIONS
 /*________________________________________________________*/
 function displayError(error) {

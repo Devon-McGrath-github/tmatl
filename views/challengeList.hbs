@@ -1,10 +1,14 @@
-<form action="/createChallenge" name="createForm" method="post">
-    <input type="input" name="create" value="" placeholder="create new challenge">
-    <button type="submit" name="createButton">Create</button>
-</form>
+<div class="header">TMATL</div>
+<div class="form">
+    <form align="center" action="/createChallenge" name="createForm" method="post">
+        <input type="input" name="create" value="" placeholder="create new challenge">
+        <button class="button" type="submit" name="createButton">Create</button>
+    </form>
+</div>
 
 <div id="list">
-    <table>
+    <div class="heading">Challenges</div>
+    <table align="center">
     {{#each challenges}}
         <tr>
             <td>
@@ -19,5 +23,3 @@
     {{/each}}
     </table>
 </div>
-<hr>
-{{> completedChallenges}}

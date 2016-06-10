@@ -1681,21 +1681,20 @@
 	var Handlebars = __webpack_require__(8);
 	function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
 	module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
-	    var alias1=container.lambda, alias2=container.escapeExpression;
+	    var helper, alias1=depth0 != null ? depth0 : {}, alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 	
 	  return "        <tr>\n            <td>\n                "
-	    + alias2(alias1((depth0 != null ? depth0.challenge : depth0), depth0))
+	    + alias4(((helper = (helper = helpers.challenge || (depth0 != null ? depth0.challenge : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"challenge","hash":{},"data":data}) : helper)))
 	    + "\n            </td>\n            <td>\n                <form action='/delete' method=\"post\">\n                    <button class=\"delete\" type=\"text\" name=\"id\" value=\""
-	    + alias2(alias1((depth0 != null ? depth0.id : depth0), depth0))
+	    + alias4(((helper = (helper = helpers.id || (depth0 != null ? depth0.id : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"id","hash":{},"data":data}) : helper)))
 	    + "\">Delete</button>\n                </form>\n            </td>\n        </tr>\n";
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 	
-	  return "<form action=\"/createChallenge\" name=\"createForm\" method=\"post\">\n    <input type=\"input\" name=\"create\" value=\"\" placeholder=\"create new challenge\">\n    <button type=\"submit\" name=\"createButton\">Create</button>\n</form>\n\n<div id=\"list\">\n    <table>\n"
+	  return "<div class=\"header\">TMATL</div>\n<div class=\"form\">\n    <form align=\"center\" action=\"/createChallenge\" name=\"createForm\" method=\"post\">\n        <input type=\"input\" name=\"create\" value=\"\" placeholder=\"create new challenge\">\n        <button class=\"button\" type=\"submit\" name=\"createButton\">Create</button>\n    </form>\n</div>\n\n<div id=\"list\">\n    <div class=\"heading\">Challenges</div>\n    <table align=\"center\">\n"
 	    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.challenges : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-	    + "    </table>\n</div>\n<hr>\n"
-	    + ((stack1 = container.invokePartial(__webpack_require__(27),depth0,{"name":"completedChallenges","data":data,"helpers":helpers,"partials":partials,"decorators":container.decorators})) != null ? stack1 : "");
-	},"usePartial":true,"useData":true});
+	    + "    </table>\n</div>\n";
+	},"useData":true});
 
 /***/ },
 /* 8 */
@@ -2881,15 +2880,15 @@
 	module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
 	    var helper;
 	
-	  return "        <tr>\n            <td>"
+	  return "            <tr>\n                <td>"
 	    + container.escapeExpression(((helper = (helper = helpers.complete || (depth0 != null ? depth0.complete : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0 != null ? depth0 : {},{"name":"complete","hash":{},"data":data}) : helper)))
-	    + "</td>\n        </tr>\n";
+	    + "</td>\n            </tr>\n";
 	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
 	    var stack1;
 	
-	  return "<div>\n    <p>This is a random paragraph</p>\n</div>\n\n<table>\n"
+	  return "<div class=\"complete\">\n    <div class=\"heading\">Completed Challenges</div>\n\n    <table id=\"table\" align=\"center\">\n"
 	    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.completed : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-	    + "</table>\n";
+	    + "    </table>\n</div>\n";
 	},"useData":true});
 
 /***/ }
